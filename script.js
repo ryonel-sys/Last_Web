@@ -2,62 +2,7 @@
    Change logo by replacing logo.png file in the same folder.
    Edit OFFICIALS array below to add/change officials.
 */
-const OFFICIALS = [
-  {
-    id: 1,
-    name: "Dr. Juan dela Cruz",
-    position: "Dean",
-    department: "Administration",
-    photo: "",
-    email: "jdelacruz@slsu.edu.ph",
-    specialization: "Industrial Engineering",
-  },
-  {
-    id: 2,
-    name: "Prof. Maria Santos",
-    position: "Program Chair - Automotive",
-    department: "Automotive",
-    photo: "",
-    email: "msantos@slsu.edu.ph",
-    specialization: "Automotive Systems",
-  },
-  {
-    id: 3,
-    name: "Engr. Roberto Garcia",
-    position: "Program Chair - Electronics",
-    department: "Electronics",
-    photo: "",
-    email: "rgarcia@slsu.edu.ph",
-    specialization: "Digital Electronics",
-  },
-  {
-    id: 4,
-    name: "Engr. Carmen Reyes",
-    position: "Program Chair - Electrical",
-    department: "Electrical",
-    photo: "",
-    email: "creyes@slsu.edu.ph",
-    specialization: "Power Systems",
-  },
-  {
-    id: 5,
-    name: "Engr. Pedro Fernandez",
-    position: "Program Chair - Mechanical",
-    department: "Mechanical",
-    photo: "",
-    email: "pfernandez@slsu.edu.ph",
-    specialization: "Manufacturing Processes",
-  },
-  {
-    id: 6,
-    name: "Dr. Ana Lopez",
-    position: "Research Coordinator",
-    department: "Research & Development",
-    photo: "",
-    email: "alopez@slsu.edu.ph",
-    specialization: "Industrial Research",
-  },
-];
+
 
 /* ======== Do not edit below unless you know JS ======== */
 document.addEventListener("DOMContentLoaded", () => {
