@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>College of Industrial Technology — Single File Site</title>
+
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- =========================
+       NAVBAR (sticky)
+       ========================= -->
+    <header class="site-header">
+      <div class="nav-inner">
+        <!-- Brand: replace logo.png with your PNG file (same folder) -->
+        <div
+          class="brand"
+          id="brand"
+          role="button"
+          onclick="scrollToSection('home')"
+          aria-label="Go to home"
+        >
+          <img
+            id="siteLogo"
+            src="logo.png"
+            alt="School logo (replace logo.png)"
+            class="logo"
+          />
+          <div class="brand-text">
+            <div class="uni-name">Southern Luzon State University</div>
+            <div class="college-name">College of Industrial Technology</div>
+          </div>
+        </div>
+
+        <!-- Desktop links -->
+        <nav class="nav" aria-label="Main navigation">
+          <ul class="nav-links" id="navLinks">
+            <li><a href="#home" data-target="home">Home</a></li>
+            <li><a href="#about" data-target="about">About</a></li>
+            <li><a href="#programs" data-target="programs">Programs</a></li>
+            <li><a href="#officials" data-target="officials">Officials</a></li>
+            <li><a href="#contact" data-target="contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <!-- CTA + mobile menu button -->
+        <div class="nav-actions">
+          <a class="nav-cta" href="#contact" data-target="contact"
+            >Contact Us</a
+          >
+          <button
+            id="navToggle"
+            class="nav-toggle"
+            aria-label="Open menu"
+            aria-expanded="false"
+          >
+            ☰
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile menu panel -->
+      <div id="mobileMenu" class="mobile-menu" aria-hidden="true">
+        <ul>
+          <li><a href="#home" data-target="home">Home</a></li>
+          <li><a href="#about" data-target="about">About</a></li>
+          <li><a href="#programs" data-target="programs">Programs</a></li>
+          <li><a href="#officials" data-target="officials">Officials</a></li>
+          <li><a href="#contact" data-target="contact">Contact</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- add spacing so fixed header doesn't overlap content -->
+    <div class="nav-spacer" aria-hidden="true"></div>
+
+    <!-- =========================
+       HERO / HOME
+       ========================= -->
+    <main>
+      <section id="home" class="hero section fade-in">
+        <div class="hero-container">
+          <div class="hero-content">
+            <span class="hero-badge">Southern Luzon State University</span>
+            <h1>College of Industrial Technology</h1>
+            <p class="hero-sub">
+              Empowering Future Industry Leaders Through Innovation and
+              Excellence.
+            </p>
+            <p class="hero-desc">
+              Building tomorrow's workforce with cutting-edge technology, skills
+              training, and industry partnerships.
+            </p>
+
+            <div class="hero-buttons">
+              <button class="btn btn-light">Explore Programs</button>
+              <button class="btn btn-outline">Learn More</button>
+            </div>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-card">
+              <h2>1000+</h2>
+              <p>Active Students</p>
+            </div>
+            <div class="stat-card">
+              <h2>50+</h2>
+              <p>Expert Faculty</p>
+            </div>
+            <div class="stat-card">
+              <h2>9</h2>
+              <p>Programs</p>
+            </div>
+            <div class="stat-card">
+              <h2>95%</h2>
+              <p>Employment Rate</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================
+         ABOUT
+         ========================= -->
+      <section id="about" class="section fade-in">
+        <div class="container">
+          <div class="section-title">
+            <h2>About CIT</h2>
+            <p class="section-sub">
+              Quality industrial technology education that prepares graduates
+              for practical work and leadership.
+            </p>
+          </div>
+
+          <div class="about-grid">
+            <div class="card">
+              <h3>Our Vision</h3>
+              <p>
+                To be a center of excellence in industrial technology education,
+                producing globally competitive professionals who drive
+                innovation and sustainable industrial development.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Our Mission</h3>
+              <p>
+                Provide quality education in industrial technology through
+                innovative teaching, modern facilities, and industry
+                partnerships that prepare students for successful careers in
+                manufacturing, automation, and industrial management.
+              </p>
+            </div>
+          </div>
+
+          <div class="value-grid">
+            <div class="card">
+              <strong>Excellence</strong>
+              <p>Pursuing high standards in education and research</p>
+            </div>
+            <div class="card">
+              <strong>Innovation</strong>
+              <p>Embracing new technologies and solutions</p>
+            </div>
+            <div class="card">
+              <strong>Integrity</strong>
+              <p>Upholding ethical principles</p>
+            </div>
+            <div class="card">
+              <strong>Sustainability</strong>
+              <p>Promoting environmentally responsible practices</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================
+         PROGRAMS
+         ========================= -->
+      <section id="programs" class="section fade-in">
+        <div class="container">
+          <div class="section-title">
+            <h2>Programs Offered</h2>
+            <p class="section-sub">
+              Choose from specialized programs designed to prepare you for
+              industrial careers.
+            </p>
+          </div>
+
+          <div class="programs-grid">
+            <div class="program-card card">
+              <h4>Bachelor of Industrial Technology</h4>
+              <p class="muted">Major: Automotive Technology</p>
+              <p>
+                Comprehensive training in automotive systems, diagnostics, and
+                repair.
+              </p>
+            </div>
+            <div class="program-card card">
+              <h4>Bachelor of Industrial Technology</h4>
+              <p class="muted">Major: Electronics Technology</p>
+              <p>
+                Advanced studies in electronics, microprocessors, and digital
+                systems.
+              </p>
+            </div>
+            <div class="program-card card">
+              <h4>Bachelor of Industrial Technology</h4>
+              <p class="muted">Major: Electrical Technology</p>
+              <p>
+                Expertise in electrical systems, power distribution, and
+                automation.
+              </p>
+            </div>
+            <div class="program-card card">
+              <h4>Bachelor of Industrial Technology</h4>
+              <p class="muted">Major: Mechanical Technology</p>
+              <p>
+                Specialized training in mechanical systems and manufacturing.
+              </p>
+            </div>
+            <div class="program-card card">
+              <h4>Bachelor of Industrial Technology</h4>
+              <p class="muted">Major: Mechanical Technology</p>
+              <p>
+                Specialized training in mechanical systems and manufacturing.
+              </p>
+            </div>
+            <div class="program-card card">
+              <h4>Bachelor of Industrial Technology</h4>
+              <p class="muted">Major: Mechanical Technology</p>
+              <p>
+                Specialized training in mechanical systems and manufacturing.
+              </p>
+            </div>
+            <div class="program-card card">
+              <h4>Bachelor of Industrial Technology</h4>
+              <p class="muted">Major: Mechanical Technology</p>
+              <p>
+                Specialized training in mechanical systems and manufacturing.
+              </p>
+            </div>
+            <div class="program-card card">
+              <h4>Bachelor of Industrial Technology</h4>
+              <p class="muted">Major: Mechanical Technology</p>
+              <p>
+                Specialized training in mechanical systems and manufacturing.
+              </p>
+            </div>
+            <div class="program-card card">
+              <h4>Bachelor of Industrial Technology</h4>
+              <p class="muted">Major: Mechanical Technology</p>
+              <p>
+                Specialized training in mechanical systems and manufacturing.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+         <!-- =========================
+         OFFICIALS         
+         ========================= --> 
+     <div class="node-row" id="cit-chairs" style="justify-content:center">
+      <div class="node" id="node-angelito"><img src="placeholder.jpg"><h4>Angelito L. Mangubat</h4><p>Program Chairperson, Automotive Technology</p></div>
+      <div class="node" id="node-reynaldo"><img src="placeholder.jpg"><h4>Reynaldo V. Danganan</h4><p>Program Chairperson, Computer Technology</p></div>
+      <div class="node" id="node-edsel"><img src="placeholder.jpg"><h4>Edsel P. Paroan</h4><p>Program Chairperson, Electrical Technology</p></div>
+      <div class="node" id="node-jose"><img src="placeholder.jpg"><h4>Jose D. Sanvictores</h4><p>Program Chairperson, Electronics Technology</p></div>
+      <div class="node" id="node-aurita"><img src="placeholder.jpg"><h4>Aurita A. Laguador</h4><p>Program Chairperson, Culinary Technology</p></div>
+      <div class="node" id="node-maricel"><img src="placeholder.jpg"><h4>Maricel O. Lingatong</h4><p>Program Chairperson, Apparel & Fashion Technology</p></div>
+      <div class="node" id="node-lendel"><img src="placeholder.jpg"><h4>Lendel D. Racelis</h4><p>Program Chairperson, Print Media Technology</p></div>
+      <div class="node" id="node-devie"><img src="placeholder.jpg"><h4>Devie S. Bello</h4><p>Program Chairperson, BS Information Technology</p></div>
+    </div>
+
+  </div>
+</div>
+
+  </section>  <!-- Student Council Chart -->  <section id="sc-org" class="chart-section">
+    <div class="chart-box">
+      <h3 class="chart-title">CIT Student Council</h3>
+      <div class="chart-canvas" id="sc-canvas">
+        <svg class="connector" id="sc-svg" aria-hidden="true"></svg><div class="node-row" style="justify-content:center;margin-top:8px">
+      <div class="node top" id="node-sc-pres"><img src="placeholder.jpg"><h4>John Emer Martinez</h4><p>President</p></div>
+    </div>
+
+    <div style="height:40px"></div>
+
+    <div class="node-row" style="justify-content:center">
+      <div class="node" id="node-sc-vp"><img src="placeholder.jpg"><h4>Maria Santos</h4><p>Vice President</p></div>
+    </div>
+
+    <div style="height:26px"></div>
+
+    <div class="node-row" id="sc-team" style="justify-content:center">
+      <div class="node" id="node-sc-sec"><img src="placeholder.jpg"><h4>James Dela Cruz</h4><p>Secretary</p></div>
+      <div class="node" id="node-sc-treas"><img src="placeholder.jpg"><h4>Ana Rivera</h4><p>Treasurer</p></div>
+      <div class="node" id="node-sc-aud"><img src="placeholder.jpg"><h4>Auditor</h4><p></p></div>
+      <div class="node" id="node-sc-pro"><img src="placeholder.jpg"><h4>PRO</h4><p></p></div>
+    </div>
+
+  </div>
+</div>
+
+      <!-- =========================
+         CONTACT
+         ========================= -->
+      <section id="contact" role="region" aria-labelledby="contactTitle">
+        <div class="container">
+          <div class="section-title">
+            <h2 id="contactTitle">Contact Us</h2>
+            <p class="section-sub">
+              Get in touch for inquiries, admissions, or more information.
+            </p>
+          </div>
+
+          <div class="contact-grid" style="margin-top: 18px">
+            <div class="contact-card">
+              <h3 style="margin-top: 0">Contact Information</h3>
+              <p>
+                <strong>Email:</strong>
+                <a href="mailto:cit@slsu.edu.ph">cit@slsu.edu.ph</a>
+              </p>
+              <p><strong>Phone:</strong> +63 (053) 123-4567</p>
+              <p>
+                <strong>Address:</strong> Tomas Oppus, Southern Leyte,
+                Philippines 6600
+              </p>
+              <p style="margin-top: 10px; color: var(--muted)">
+                Office Hours: Monday - Friday, 8:00 AM - 5:00 PM
+              </p>
+            </div>
+
+            <div class="contact-card">
+              <h3 style="margin-top: 0">Send a Message</h3>
+              <!-- The form below is client-side only. Submitting will open the user's default mail client as a fallback -->
+              <form id="contactForm" onsubmit="sendMessage(event)">
+                <div class="form-field">
+                  <label for="name">Your name</label>
+                  <input
+                    id="name"
+                    type="text"
+                    required
+                    placeholder="Juan dela Cruz"
+                  />
+                </div>
+                <div class="form-field">
+                  <label for="email">Your email</label>
+                  <input
+                    id="email"
+                    type="email"
+                    required
+                    placeholder="example@mail.com"
+                  />
+                </div>
+                <div class="form-field">
+                  <label for="message">Message</label>
+                  <textarea
+                    id="message"
+                    rows="5"
+                    required
+                    placeholder="Write your message..."
+                  ></textarea>
+                </div>
+                <div
+                  style="display: flex; gap: 10px; justify-content: flex-end"
+                >
+                  <button type="submit" class="btn btn-primary">Send</button>
+                  <button
+                    type="button"
+                    onclick="resetForm()"
+                    class="btn"
+                    style="background: #f0f6ff; border: 1px solid #e6eefc"
+                  >
+                    Reset
+                  </button>
+                </div>
+                <p
+                  id="formNote"
+                  style="font-size: 13px; color: var(--muted); margin-top: 8px"
+                >
+                  Note: This form opens your mail app. To save messages, you
+                  need a backend service (not included).
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- =========================
+       FOOTER
+       ========================= -->
+    <footer class="footer">
+      <div class="frow container">
+        <div>
+          <h4>College of Industrial Technology</h4>
+          <p style="color: #a5b7d9">Southern Leyte State University</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <div class="quick-links">
+            <a href="#home" data-target="home">Home</a>
+            <a href="#about" data-target="about">About</a>
+            <a href="#programs" data-target="programs">Programs</a>
+            <a href="#officials" data-target="officials">Officials</a>
+            <a href="#contact" data-target="contact">Contact</a>
+          </div>
+        </div>
+        <div>
+          <h4>Contact Info</h4>
+          <p style="color: #a5b7d9; margin-top: 8px">
+            Tomas Oppus, Southern Leyte, Philippines 6600
+          </p>
+          <p style="color: #a5b7d9">+63 (053) 123-4567</p>
+          <p style="color: #a5b7d9">cit@slsu.edu.ph</p>
+        </div>
+      </div>
+
+      <div style="text-align: center; color: #8aa7db; margin-top: 18px">
+        © <span id="year"></span> Southern Leyte State University - College of
+        Industrial Technology
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+  </body>
+</html>

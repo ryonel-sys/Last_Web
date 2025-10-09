@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CIT - Southern Luzon State University</title>
+  <style>
+    :root{
+      --slsu-dark:#002B5B;
+      --slsu-mid:#1e4ba9;
+      --accent:#0066CC;
+      --line:#bfbfbf; /* neutral gray lines */
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter, Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;background:#f7f9fc;color:#222}/* Header */
+header{display:flex;align-items:center;justify-content:space-between;padding:12px 28px;background:linear-gradient(90deg,var(--slsu-dark),var(--slsu-mid));color:#fff;position:sticky;top:0;z-index:50}
+.brand{display:flex;align-items:center;gap:14px}
+.brand img{width:56px;height:56px;border-radius:50%;object-fit:cover}
+nav a{color:#fff;margin-left:18px;text-decoration:none;font-weight:600}
+
+/* Hero: left text, right building image */
+.hero{display:flex;gap:30px;align-items:center;padding:36px 6%;background:#eef5ff}
+.hero-left{flex:1;max-width:780px}
+.hero-left h1{margin:0 0 12px 0;color:var(--slsu-dark);font-size:2rem}
+.hero-left p{margin:0 0 10px 0;color:#333}
+.hero-right{width:420px;flex-shrink:0}
+.building-wrap{width:100%;height:260px;border-radius:12px;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,0.12)}
+.building-wrap img{width:100%;height:100%;object-fit:cover;filter:brightness(0.85)}
+
+/* VMGO block - below hero */
+.vmgo{max-width:1100px;margin:18px auto;padding:22px;background:#fff;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
+.vmgo h2{color:var(--slsu-dark);margin-top:0}
+.vmgo h3{color:var(--slsu-mid);margin-bottom:6px}
+
+/* Programs */
+.programs{max-width:1100px;margin:28px auto;padding:0 18px}
+.program-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.program-card{background:#fff;padding:14px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);border-left:6px solid var(--slsu-mid)}
+
+/* Org charts wrapper */
+.chart-section{max-width:1200px;margin:40px auto;padding:0 18px}
+.chart-box{background:#fff;border-radius:12px;padding:18px;box-shadow:0 8px 20px rgba(0,0,0,0.06)}
+.chart-title{color:var(--slsu-dark);margin:0 0 18px 0}
+
+/* Org chart layout */
+.chart-canvas{position:relative;padding:28px; /* keep relative so svg can be absolute inside */ }
+svg.connector{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible; z-index:0;} /* <-- ensure svg is behind nodes */
+
+/* Important: give nodes a higher stacking context so they appear above svg */
+.node-row{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin:18px 0}
+.node{width:220px;border-radius:10px;padding:12px;background:linear-gradient(135deg,#f8fbff,#fff);border:2px solid var(--line);text-align:center;box-shadow:0 6px 14px rgba(0,0,0,0.06); position:relative; z-index:2; background-clip: padding-box;}
+.node.top{background:linear-gradient(135deg,var(--slsu-mid),var(--slsu-dark));color:#fff;border-color:transparent;width:260px; z-index:3}
+.node img{width:72px;height:72px;border-radius:50%;object-fit:cover;margin-bottom:8px}
+.node h4{margin:6px 0 4px 0;font-size:1rem}
+.node p{margin:0;font-size:0.9rem;color:#333}
+
+/* small adjustments when stacked on small screens */
+@media(max-width:900px){
+  .hero{flex-direction:column;align-items:flex-start}
+  .hero-right{width:100%}
+  .building-wrap{height:200px}
+  .node{width:92%}
+  .node.top{width:96%}
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <img src="cit-logo-placeholder.png" alt="CIT logo">
+      <div>
+        <div style="font-weight:700">College of Industrial Technology</div>
+        <div style="font-size:0.9rem;opacity:0.9">Southern Luzon State University</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#hero">Home</a>
+      <a href="#vmgo">Vision & Mission</a>
+      <a href="#programs">Programs</a>
+      <a href="#cit-org">CIT Org</a>
+      <a href="#sc-org">Student Council</a>
+    </nav>
+  </header>  <!-- HERO -->  <section class="hero" id="hero">
+    <div class="hero-left">
+      <h1>Welcome to the College of Industrial Technology</h1>
+      <p><strong>Southern Luzon State University</strong></p>
+      <p>We provide quality technical education and hands-on training to prepare skilled and industry-ready graduates.</p>
+    </div>
+    <div class="hero-right">
+      <div class="building-wrap">
+        <img src="cit-building-placeholder.jpg" alt="CIT Building">
+      </div>
+    </div>
+  </section>  <!-- VMGO (moved below hero) -->  <section id="vmgo" class="vmgo">
+    <h2>Vision</h2>
+    <p>We aspire to be a leading innovative, high performing college that develops technologically proficient graduates.</p>
+    <h2>Mission</h2>
+    <p>Contribute in the skills development of the Filipino workers innovatively proficient, productive, and versatile in all aspects of technology evolution. Transform students with competence essentials for technological advancement.</p>
+    <h2>Goals and Objectives</h2>
+    <ol>
+      <li>Develop qualified students to be effective instruments of inquiry and research with a sense of responsibility and commitment for the improvement of human condition-physical, mental and spiritual domains.</li>
+      <li>Stimulate and maintain functional and productive activities in various disciplines.</li>
+      <li>Acquire skills and leadership competence in various disciplines in order to accelerate community progress as trained professionals in government and non-government agencies.</li>
+      <li>Adapt skills and internalized intellectual integrity, moral, cultural, and aesthetic values exemplifying ethical norms and professionalism.</li>
+    </ol>
+  </section>  <!-- Programs -->  <section id="programs" class="programs">
+    <h2 style="text-align:center;color:var(--slsu-dark)">Programs Offered</h2>
+    <div class="program-grid">
+      <div class="program-card">Bachelor of Industrial Technology – Mechanical Technology</div>
+      <div class="program-card">Bachelor of Industrial Technology – Automotive Technology</div>
+      <div class="program-card">Bachelor of Industrial Technology – Computer Technology</div>
+      <div class="program-card">Bachelor of Industrial Technology – Electrical Technology</div>
+      <div class="program-card">Bachelor of Industrial Technology – Electronics Technology</div>
+      <div class="program-card">Bachelor of Industrial Technology – Culinary Technology</div>
+      <div class="program-card">Bachelor of Industrial Technology – Apparel & Fashion Technology</div>
+      <div class="program-card">Bachelor of Industrial Technology – Print Media Technology</div>
+      <div class="program-card">Bachelor of Science in Information Technology</div>
+    </div>
+  </section>  <!-- CIT Organizational Chart -->  <section id="cit-org" class="chart-section">
+    <div class="chart-box">
+      <h3 class="chart-title">CIT Organizational Chart</h3>
+      <div class="chart-canvas" id="cit-canvas">
+        <svg class="connector" id="cit-svg" aria-hidden="true"></svg><!-- Level 1: Dean (top, highlighted) -->
+    <div class="node-row" style="justify-content:center;margin-top:8px">
+      <div class="node top" id="node-dean">
+        <img src="placeholder.jpg" alt="Dean">
+        <h4>Ricaryl Catherine P. Cruz, EdD</h4>
+        <p>Dean, College of Industrial Technology</p>
+      </div>
+    </div>
+
+    <!-- vertical line space -->
+    <div style="height:40px"></div>
+
+    <!-- Level 2: Department Head (centered below dean) -->
+    <div class="node-row" style="justify-content:center">
+      <div class="node" id="node-head">
+        <img src="placeholder.jpg" alt="Dept Head">
+        <h4>Engr. Jerwin D. Campita</h4>
+        <p>Department Head, BIndTech<br>Concurrent Program Chair, Mechanical Technology</p>
+      </div>
+    </div>
+
+    <!-- small space before horizontal connector -->
+    <div style="height:26px"></div>
+
+    <!-- Level 3: Program Chairpersons (arranged horizontally) -->
+    <div class="node-row" id="cit-chairs" style="justify-content:center">
+      <div class="node" id="node-angelito"><img src="placeholder.jpg"><h4>Angelito L. Mangubat</h4><p>Program Chairperson, Automotive Technology</p></div>
+      <div class="node" id="node-reynaldo"><img src="placeholder.jpg"><h4>Reynaldo V. Danganan</h4><p>Program Chairperson, Computer Technology</p></div>
+      <div class="node" id="node-edsel"><img src="placeholder.jpg"><h4>Edsel P. Paroan</h4><p>Program Chairperson, Electrical Technology</p></div>
+      <div class="node" id="node-jose"><img src="placeholder.jpg"><h4>Jose D. Sanvictores</h4><p>Program Chairperson, Electronics Technology</p></div>
+      <div class="node" id="node-aurita"><img src="placeholder.jpg"><h4>Aurita A. Laguador</h4><p>Program Chairperson, Culinary Technology</p></div>
+      <div class="node" id="node-maricel"><img src="placeholder.jpg"><h4>Maricel O. Lingatong</h4><p>Program Chairperson, Apparel & Fashion Technology</p></div>
+      <div class="node" id="node-lendel"><img src="placeholder.jpg"><h4>Lendel D. Racelis</h4><p>Program Chairperson, Print Media Technology</p></div>
+      <div class="node" id="node-devie"><img src="placeholder.jpg"><h4>Devie S. Bello</h4><p>Program Chairperson, BS Information Technology</p></div>
+    </div>
+
+  </div>
+</div>
+
+  </section>  <!-- Student Council Chart -->  <section id="sc-org" class="chart-section">
+    <div class="chart-box">
+      <h3 class="chart-title">CIT Student Council</h3>
+      <div class="chart-canvas" id="sc-canvas">
+        <svg class="connector" id="sc-svg" aria-hidden="true"></svg><div class="node-row" style="justify-content:center;margin-top:8px">
+      <div class="node top" id="node-sc-pres"><img src="placeholder.jpg"><h4>John Emer Martinez</h4><p>President</p></div>
+    </div>
+
+    <div style="height:40px"></div>
+
+    <div class="node-row" style="justify-content:center">
+      <div class="node" id="node-sc-vp"><img src="placeholder.jpg"><h4>Maria Santos</h4><p>Vice President</p></div>
+    </div>
+
+    <div style="height:26px"></div>
+
+    <div class="node-row" id="sc-team" style="justify-content:center">
+      <div class="node" id="node-sc-sec"><img src="placeholder.jpg"><h4>James Dela Cruz</h4><p>Secretary</p></div>
+      <div class="node" id="node-sc-treas"><img src="placeholder.jpg"><h4>Ana Rivera</h4><p>Treasurer</p></div>
+      <div class="node" id="node-sc-aud"><img src="placeholder.jpg"><h4>Auditor</h4><p></p></div>
+      <div class="node" id="node-sc-pro"><img src="placeholder.jpg"><h4>PRO</h4><p></p></div>
+    </div>
+
+  </div>
+</div>
+
+  </section>  <footer style="text-align:center;padding:18px;background:linear-gradient(90deg,var(--slsu-dark),var(--slsu-mid));color:#fff;margin-top:36px">© 2025 College of Industrial Technology — Southern Luzon State University</footer>  <script>
+    /*
+      Draw SVG connectors in the pattern requested:
+      - Vertical line from Dean -> Dept Head
+      - Vertical line from Dept Head down a little, then a horizontal line that spans across program chairs
+      - From that horizontal line draw vertical lines down to each chair center
+      - Same pattern for Student Council
+      Notes: only connector drawing logic + stacking adjusted.
+    */
+
+    function getCenter(el, containerRect){
+      const r = el.getBoundingClientRect();
+      return { x: r.left + r.width/2 - containerRect.left, y: r.top + r.height/2 - containerRect.top };
+    }
+
+    function drawOrgConnectors(svgEl, containerEl, topId, midId, childrenIds){
+      // clear previous connectors
+      while (svgEl.firstChild) svgEl.removeChild(svgEl.firstChild);
+
+      const contRect = containerEl.getBoundingClientRect();
+      if (contRect.width === 0 || contRect.height === 0) return;
+
+      // set svg viewbox to container size so coordinates match
+      svgEl.setAttribute('width', contRect.width);
+      svgEl.setAttribute('height', contRect.height);
+      svgEl.setAttribute('viewBox', `0 0 ${contRect.width} ${contRect.height}`);
+      svgEl.style.width = '100%';
+      svgEl.style.height = '100%';
+      svgEl.style.overflow = 'visible';
+      // ensure svg sits behind
+      svgEl.style.zIndex = '0';
+
+      const topEl = document.getElementById(topId);
+      const midEl = document.getElementById(midId);
+      if(!topEl || !midEl) return;
+
+      const topRect = topEl.getBoundingClientRect();
+      const midRect = midEl.getBoundingClientRect();
+
+      // coordinates relative to container
+      const topCx = topRect.left + topRect.width/2 - contRect.left;
+      const topBottomY = topRect.bottom - contRect.top;
+      const midCx = midRect.left + midRect.width/2 - contRect.left;
+      const midTopY = midRect.top - contRect.top;
+
+      // 1) vertical line: top bottom -> mid top (thin)
+      const vLine = document.createElementNS('http://www.w3.org/2000/svg','line');
+      vLine.setAttribute('x1', topCx);
+      vLine.setAttribute('y1', topBottomY - 2);
+      vLine.setAttribute('x2', midCx);
+      vLine.setAttribute('y2', midTopY + 2);
+      vLine.setAttribute('stroke', '#bfbfbf');
+      vLine.setAttribute('stroke-width', '2');
+      vLine.setAttribute('stroke-linecap','round');
+      svgEl.appendChild(vLine);
+
+      // 2) short vertical from mid bottom to baseline
+      const midBottomY = midRect.bottom - contRect.top;
+      const baselineY = midBottomY + 30; // space for horizontal
+      const midDown = document.createElementNS('http://www.w3.org/2000/svg','line');
+      midDown.setAttribute('x1', midCx);
+      midDown.setAttribute('y1', midBottomY + 2);
+      midDown.setAttribute('x2', midCx);
+      midDown.setAttribute('y2', baselineY);
+      midDown.setAttribute('stroke','#bfbfbf');
+      midDown.setAttribute('stroke-width','3'); // slightly thicker baseline connector
+      svgEl.appendChild(midDown);
+
+      // 3) horizontal line: span across children center positions
+      const childCenters = childrenIds.map(id => {
+        const el = document.getElementById(id);
+        if(!el) return null;
+        const r = el.getBoundingClientRect();
+        return r.left + r.width/2 - contRect.left;
+      }).filter(x=>x!==null);
+
+      if(childCenters.length === 0) return;
+      const hMin = Math.min(...childCenters) - 20;
+      const hMax = Math.max(...childCenters) + 20;
+      const hLine = document.createElementNS('http://www.w3.org/2000/svg','line');
+      hLine.setAttribute('x1', hMin);
+      hLine.setAttribute('y1', baselineY);
+      hLine.setAttribute('x2', hMax);
+      hLine.setAttribute('y2', baselineY);
+      hLine.setAttribute('stroke','#bfbfbf');
+      hLine.setAttribute('stroke-width','3'); // slightly thicker for visibility
+      hLine.setAttribute('stroke-linecap','butt');
+      svgEl.appendChild(hLine);
+
+      // 4) verticals from baseline to each child (stop a hair above top of node)
+      childrenIds.forEach(id => {
+        const el = document.getElementById(id);
+        if(!el) return;
+        const r = el.getBoundingClientRect();
+        const childCx = r.left + r.width/2 - contRect.left;
+        const childTopY = r.top - contRect.top;
+        const v = document.createElementNS('http://www.w3.org/2000/svg','line');
+        v.setAttribute('x1', childCx);
+        v.setAttribute('y1', baselineY);
+        v.setAttribute('x2', childCx);
+        v.setAttribute('y2', childTopY - 6); // stops slightly above node top
+        v.setAttribute('stroke','#bfbfbf');
+        v.setAttribute('stroke-width','2');
+        v.setAttribute('stroke-linecap','round');
+        svgEl.appendChild(v);
+      });
+    }
+
+    function redrawAll(){
+      // CIT
+      const citCanvas = document.getElementById('cit-canvas');
+      const citSvg = document.getElementById('cit-svg');
+      const citChildren = ['node-angelito','node-reynaldo','node-edsel','node-jose','node-aurita','node-maricel','node-lendel','node-devie'];
+      drawOrgConnectors(citSvg, citCanvas, 'node-dean', 'node-head', citChildren);
+
+      // Student Council
+      const scCanvas = document.getElementById('sc-canvas');
+      const scSvg = document.getElementById('sc-svg');
+      const scChildren = ['node-sc-sec','node-sc-treas','node-sc-aud','node-sc-pro'];
+      // Use president -> vice as mid anchor so baseline appears under VP (as requested earlier)
+      drawOrgConnectors(scSvg, scCanvas, 'node-sc-pres', 'node-sc-vp', scChildren);
+    }
+
+    // initial draw + responsive redraw
+    window.addEventListener('load', () => {
+      // small delay to let fonts/images size settle
+      setTimeout(redrawAll, 80);
+    });
+    window.addEventListener('resize', () => {
+      // debounce-ish
+      if (window._orgResizeTimeout) clearTimeout(window._orgResizeTimeout);
+      window._orgResizeTimeout = setTimeout(redrawAll, 120);
+    });
+    // also redraw on orientation change and when user scrolls (keeps alignment steady)
+    window.addEventListener('orientationchange', () => setTimeout(redrawAll, 160));
+    window.addEventListener('scroll', () => {
+      if (window._orgScrollThrottle) return;
+      window._orgScrollThrottle = true;
+      requestAnimationFrame(() => { redrawAll(); window._orgScrollThrottle = false; });
+    });
+  </script>
+</body>
+</html>
