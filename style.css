@@ -322,24 +322,98 @@ body {
 }
 
 /* Programs */
-.programs-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-  max-width: var(--max-width);
+/* === Programs Section === */
+.programs {
+  background: #f3f6fb;
+  padding: 100px 40px;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.programs-header {
+  margin-bottom: 60px;
+}
+
+.programs-header h2 {
+  font-size: 2.6rem;
+  color: #0a3d91;
+  margin-bottom: 10px;
+}
+
+.programs-header p {
+  font-size: 1rem;
+  color: #5f6c82;
+  max-width: 600px;
   margin: 0 auto;
-  padding: 0 20px;
 }
+
+/* === Program Cards Grid === */
+.programs-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* === Program Card === */
 .program-card {
-  padding: 18px;
-  border-radius: 12px;
-  background: linear-gradient(180deg, #fff, #fbfdff);
-  box-shadow: 0 6px 18px rgba(8, 35, 157, 0.04);
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  height: 100%;
 }
-.program-card h4 {
-  color: #0662d8;
-  margin-top: 0;
+
+.program-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
 }
+
+/* === Image Slot === */
+.program-img {
+  width: 100%;
+  height: 160px; /* Fixed height to prevent stretching */
+  object-fit: cover; /* Ensures image scales neatly */
+  border-bottom: 4px solid #0a3d91; /* Stylish divider line */
+}
+
+/* === Program Info === */
+.program-info {
+  padding: 20px 24px;
+}
+
+.program-info h3 {
+  color: #0a3d91;
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.program-info p {
+  color: #4b5563;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .programs {
+    padding: 70px 20px;
+  }
+
+  .programs-header h2 {
+    font-size: 2rem;
+  }
+
+  .program-img {
+    height: 140px;
+  }
+}
+
 
 /* OFFICIALS */
 .orgchart {
