@@ -342,17 +342,134 @@ body {
 }
 
 /* OFFICIALS */
-
-
-/*Hover-Section*/
-.tree li a:hover, .tree li a:hover i, .tree li a:hover span, .tree li a:hover+ul li a {
-	background: #c8e4f8;
-	color: #000;
-	border: 1px solid #94a0b4;
+.orgchart {
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  background: #f4f6fb;
+  padding: 60px 20px;
+  border-radius: 16px;
+  max-width: 1200px;
+  margin: 60px auto;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
-.tree li a:hover+ul li::after, .tree li a:hover+ul li::before, .tree li a:hover+ul::before, .tree li a:hover+ul ul::before {
-	border-color: #94a0b4;
+
+/* Title */
+.orgchart-title {
+  font-size: 30px;
+  font-weight: 700;
+  color: #1e56a0;
+  margin-bottom: 40px;
 }
+
+/* Node styles */
+.org-node {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 230px;
+  margin: 0 auto;
+  position: relative;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.org-node:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.org-node img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #1e56a0;
+  margin-bottom: 10px;
+}
+
+.org-node h2,
+.org-node h3,
+.org-node h4 {
+  margin: 8px 0 4px;
+  color: #222;
+}
+
+.org-node p {
+  font-size: 14px;
+  color: #555;
+}
+
+.org-node.top {
+  background: linear-gradient(135deg, #e7f1ff, #9ab8e0);
+  color: white;
+}
+
+.org-node.top img {
+  border-color: #fff;
+}
+
+/* Level layout */
+.org-level {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.level-3 {
+  flex-wrap: wrap;
+  gap: 30px 30px;
+  margin-top: 50px;
+}
+
+/* Lines */
+.line.vertical {
+  width: 3px;
+  height: 30px;
+  background: #aac7ff;
+  margin: 0 auto;
+}
+
+.level-3 .line.horizontal {
+  position: absolute;
+  top: -30px;
+  left: 11.5%;
+  right: 11.5%;
+  height: 2px;
+  background: #aac7ff;
+}
+
+/* Vertical connectors for each node */
+.level-3 .org-node::before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 30px;
+  background: #aac7ff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .org-node {
+    width: 180px;
+    padding: 15px;
+  }
+
+  .org-node img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .level-3 .line.horizontal {
+    left: 5%;
+    right: 5%;
+  }
+}
+
 /* Contact grid */
 .contact-grid {
   display: grid;
