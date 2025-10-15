@@ -160,12 +160,15 @@ body {
 /* HERO */
 /* === HERO SECTION (modern layout) === */
 .hero {
-  background: linear-gradient(180deg, #0b6ef6, #0662d8);
+  background: 
+    linear-gradient(rgba(186, 198, 215, 0.7), rgba(6, 98, 216, 0.7)), 
+    url("herobg.png") center/cover no-repeat;
   color: white;
   padding: 100px 20px;
   display: flex;
   justify-content: center;
 }
+
 
 .hero-container {
   display: flex;
