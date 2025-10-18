@@ -299,7 +299,7 @@ body {
 .card {
   background: var(--card);
   padding: 18px;
-  border-radius: 12px;
+  border-radius: 0px;
   box-shadow: 0 8px 24px rgba(11, 78, 170, 0.05);
   transition: transform 0.25s, box-shadow 0.25s;
 }
@@ -716,7 +716,7 @@ body {
 .card {
   background: #fff;
   border-radius: 14px;
-  box-shadow: 0 18px 40px rgba(11, 78, 170, 0.04), 0 4px 12px rgba(11, 78, 170, 0.03);
+  box-shadow: 0 18px 40px rgba(49, 131, 247, 0.04), 0 4px 12px rgba(11, 78, 170, 0.03);
   overflow: hidden;
   cursor: pointer;
   position: relative;
@@ -768,7 +768,7 @@ body {
 
 /* Hover Effects */
 .card:hover {
-  background: linear-gradient(135deg, #0b6ef6 0%, #0642a6 100%);
+  background: linear-gradient(135deg, #6c96d1 0%, #175ed9 100%);
   transform: translateY(-8px);
 }
 
