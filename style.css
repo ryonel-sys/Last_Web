@@ -161,7 +161,7 @@ body {
 /* === HERO SECTION (modern layout) === */
 .hero {
   background: 
-    linear-gradient(rgba(186, 198, 215, 0.7), rgba(6, 98, 216, 0.7)), 
+    linear-gradient(rgba(114, 160, 225, 0.7), rgba(6, 98, 216, 0.7)), 
     url("herobg.png") center/cover no-repeat;
   color: white;
   padding: 100px 20px;
@@ -634,4 +634,162 @@ body {
     width: 40px;
     height: 40px;
   }
+}
+
+.slide-button {
+  position: relative;
+  display: inline-block;
+  padding: 12px 28px;
+  background-color: #216afc;
+  color: white;
+  font-weight: 600;
+  border-radius: 16px;
+  text-decoration: none;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+  z-index: 1;
+}
+
+.slide-button::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 100%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(135deg, #0b6ef6, #0548a8, #001f5c); /* fade effect */
+  transform: rotate(-45deg);
+  transition: all 0.6s ease;
+  opacity: 0; /* start invisible */
+  z-index: -1; /* behind text */
+}
+
+.slide-button:hover::before {
+  top: -50%;
+  left: -50%;
+  opacity: 1; /* fades in */
+}
+
+.slide-button:hover {
+  transform: translateY(-3px);
+}
+
+
+/* === ABOUT CIT CENTERED STYLE === */
+.about-cit {
+  background: #f8fbff;
+  padding: 70px 20px 100px;
+  font-family: "Poppins", sans-serif;
+  color: #0b2b4f;
+  text-align: center;
+}
+
+.about-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-inner h2 {
+  font-size: 38px;
+  font-weight: 800;
+  color: #3b64ac;
+  margin-bottom: 10px;
+}
+
+.about-desc {
+  font-size: 16px;
+  color: #6b7280;
+  margin-bottom: 50px;
+}
+
+/* Rows */
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+/* Card Base */
+.card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 18px 40px rgba(11, 78, 170, 0.04), 0 4px 12px rgba(11, 78, 170, 0.03);
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.35s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Sizes */
+.top-card {
+  width: 500px;
+  height: 180px;
+}
+
+.goal-card {
+  width: 250px;
+  height: 250px;
+}
+
+/* Texts */
+.card .front,
+.card .back {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.card .front {
+  font-weight: 800;
+  font-size: 28px;
+  color: #0b367f;
+  opacity: 1;
+}
+
+
+.card .back {
+  font-size: 15px;
+  color: #0b2b3b;
+  line-height: 1.6;
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+}
+
+/* Hover Effects */
+.card:hover {
+  background: linear-gradient(135deg, #0b6ef6 0%, #0642a6 100%);
+  transform: translateY(-8px);
+}
+
+.card:hover .front {
+  opacity: 0;
+  transform: translateY(-15px);
+}
+
+.card:hover .back {
+  opacity: 1;
+  transform: translateY(-50%);
+  color: #fff;
+  pointer-events: auto;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .top-card { width: 90%; }
+  .goal-card { width: 45%; }
+}
+
+@media (max-width: 600px) {
+  .goal-card, .top-card { width: 100%; }
 }
