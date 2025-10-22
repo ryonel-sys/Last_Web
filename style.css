@@ -1,3 +1,6 @@
+/* ========================================
+   CSS VARIABLES
+   ======================================== */
 :root {
   --blue-600: #0b6ef6;
   --blue-700: #055af0;
@@ -9,13 +12,18 @@
   --nav-height: 72px;
 }
 
+/* ========================================
+   GLOBAL RESETS & BASE STYLES
+   ======================================== */
 * {
   box-sizing: border-box;
 }
+
 html,
 body {
   height: 100%;
 }
+
 body {
   margin: 0;
   font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto,
@@ -28,14 +36,18 @@ body {
   scroll-behavior: smooth;
 }
 
-/* container */
+/* ========================================
+   CONTAINER UTILITY
+   ======================================== */
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 20px;
 }
 
-/* NAVBAR */
+/* ========================================
+   NAVIGATION BAR
+   ======================================== */
 .site-header {
   position: fixed;
   left: 0;
@@ -46,6 +58,7 @@ body {
   backdrop-filter: blur(6px);
   border-bottom: 1px solid rgba(11, 78, 170, 0.04);
 }
+
 .nav-inner {
   display: flex;
   align-items: center;
@@ -56,34 +69,38 @@ body {
   gap: 12px;
 }
 
-/* Brand (logo + text) */
+/* Brand (Logo + Text) */
 .brand {
   display: flex;
   align-items: center;
   gap: 12px;
   cursor: pointer;
 }
+
 .logo {
   width: 48px;
   height: 48px;
   object-fit: contain;
   border-radius: 8px;
 }
+
 .brand-text .uni-name {
   font-weight: 700;
   font-size: 14px;
   line-height: 1;
 }
+
 .brand-text .college-name {
   font-size: 12px;
   color: var(--muted);
   line-height: 1;
 }
 
-/* Nav links (desktop) */
+/* Desktop Navigation Links */
 .nav {
   display: block;
 }
+
 .nav-links {
   display: flex;
   gap: 14px;
@@ -92,6 +109,7 @@ body {
   padding: 0;
   align-items: center;
 }
+
 .nav-links a {
   display: inline-block;
   padding: 8px 10px;
@@ -101,17 +119,19 @@ body {
   text-decoration: none;
   transition: all 0.18s;
 }
+
 .nav-links a:hover {
   background: rgba(11, 110, 246, 0.06);
   color: var(--accent);
 }
 
-/* Actions */
+/* Navigation Actions (CTA + Mobile Toggle) */
 .nav-actions {
   display: flex;
   align-items: center;
   gap: 12px;
 }
+
 .nav-cta {
   padding: 8px 14px;
   border-radius: 10px;
@@ -121,6 +141,7 @@ body {
   border: none;
   text-decoration: none;
 }
+
 .nav-toggle {
   display: none;
   border: 0;
@@ -130,12 +151,13 @@ body {
   padding: 6px;
 }
 
-/* mobile menu */
+/* Mobile Menu Panel */
 .mobile-menu {
   display: none;
   background: rgba(255, 255, 255, 0.96);
   border-top: 1px solid rgba(11, 78, 170, 0.04);
 }
+
 .mobile-menu ul {
   list-style: none;
   margin: 0;
@@ -144,6 +166,7 @@ body {
   flex-direction: column;
   gap: 8px;
 }
+
 .mobile-menu a {
   display: block;
   padding: 10px;
@@ -152,23 +175,22 @@ body {
   color: #123;
 }
 
-/* spacer under fixed nav */
+/* Spacer for Fixed Navigation */
 .nav-spacer {
   height: calc(var(--nav-height));
 }
 
-/* HERO */
-/* === HERO SECTION (modern layout) === */
+/* ========================================
+   HERO SECTION
+   ======================================== */
 .hero {
-  background: 
-    linear-gradient(rgba(114, 160, 225, 0.7), rgba(6, 98, 216, 0.7)), 
+  background: linear-gradient(rgba(114, 160, 225, 0.7), rgba(6, 98, 216, 0.7)),
     url("herobg.png") center/cover no-repeat;
   color: white;
   padding: 100px 20px;
   display: flex;
   justify-content: center;
 }
-
 
 .hero-container {
   display: flex;
@@ -215,6 +237,7 @@ body {
   gap: 12px;
 }
 
+/* Hero Button Styles */
 .btn-light {
   background: white;
   color: #0b6ef6;
@@ -235,6 +258,46 @@ body {
   cursor: pointer;
 }
 
+/* Slide Button with Gradient Effect */
+.slide-button {
+  position: relative;
+  display: inline-block;
+  padding: 12px 28px;
+  background-color: #216afc;
+  color: white;
+  font-weight: 600;
+  border-radius: 16px;
+  text-decoration: none;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+  z-index: 1;
+}
+
+.slide-button::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 100%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(135deg, #0b6ef6, #0548a8, #001f5c);
+  transform: rotate(-45deg);
+  transition: all 0.6s ease;
+  opacity: 0;
+  z-index: -1;
+}
+
+.slide-button:hover::before {
+  top: -50%;
+  left: -50%;
+  opacity: 1;
+}
+
+.slide-button:hover {
+  transform: translateY(-3px);
+}
+
+/* Hero Statistics Grid */
 .hero-stats {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -268,34 +331,28 @@ body {
   font-size: 14px;
 }
 
-@media (max-width: 768px) {
-  .hero-container {
-    flex-direction: column;
-    text-align: center;
-  }
-  .hero-stats {
-    width: 100%;
-    grid-template-columns: repeat(2, 1fr);
-    justify-items: center;
-  }
-}
-
-/* SECTIONS */
+/* ========================================
+   SECTION UTILITIES
+   ======================================== */
 .section {
   padding: 64px 0;
   scroll-margin-top: calc(var(--nav-height) + 10px);
 }
+
 .section-title {
   text-align: center;
   margin-bottom: 28px;
 }
+
 .section-sub {
   color: var(--muted);
   max-width: 760px;
   margin: 10px auto 0;
 }
 
-/* Cards */
+/* ========================================
+   CARD STYLES
+   ======================================== */
 .card {
   background: var(--card);
   padding: 18px;
@@ -303,29 +360,136 @@ body {
   box-shadow: 0 8px 24px rgba(11, 78, 170, 0.05);
   transition: transform 0.25s, box-shadow 0.25s;
 }
+
 .card:hover {
   transform: translateY(-6px);
   box-shadow: 0 12px 32px rgba(11, 78, 170, 0.08);
 }
 
-/* About grid */
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 20px;
-}
-.value-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-  margin-top: 18px;
+/* ========================================
+   ABOUT SECTION
+   ======================================== */
+.about-cit {
+background: #f8fbff;
+padding: 70px 20px 100px;
+font-family: "Poppins", sans-serif;
+color: #0b2b4f;
+text-align: center;
 }
 
-/* Programs */
-/* === Programs Section === */
+.about-inner {
+max-width: 1200px;
+margin: 0 auto;
+}
+
+.about-inner h2 {
+font-size: 38px;
+font-weight: 800;
+color: #3b64ac;
+margin-bottom: 10px;
+}
+
+.about-desc {
+font-size: 16px;
+color: #6b7280;
+margin-bottom: 50px;
+}
+
+/* Rows */
+.row {
+display: flex;
+justify-content: center;
+align-items: stretch;
+gap: 30px;
+flex-wrap: wrap;
+margin-bottom: 30px;
+}
+
+/* Card Base */
+.card {
+background: #fff;
+border-radius: 14px;
+box-shadow: 0 18px 40px rgba(49, 131, 247, 0.04), 0 4px 12px rgba(11, 78, 170, 0.03);
+overflow: hidden;
+cursor: pointer;
+position: relative;
+transition: all 0.35s ease;
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+}
+
+/* Sizes */
+.top-card {
+width: 500px;
+height: 180px;
+}
+
+.goal-card {
+width: 250px;
+height: 250px;
+}
+
+/* Texts */
+.card .front,
+.card .back {
+position: absolute;
+left: 20px;
+right: 20px;
+top: 50%;
+transform: translateY(-50%);
+transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.card .front {
+font-weight: 800;
+font-size: 28px;
+color: #0b367f;
+opacity: 1;
+}
+
+
+.card .back {
+font-size: 15px;
+color: #0b2b3b;
+line-height: 1.6;
+opacity: 0;
+transform: translateY(20px);
+pointer-events: none;
+}
+
+/* Hover Effects */
+.card:hover {
+background: linear-gradient(135deg, #6c96d1 0%, #175ed9 100%);
+transform: translateY(-8px);
+}
+
+.card:hover .front {
+opacity: 0;
+transform: translateY(-15px);
+}
+
+.card:hover .back {
+opacity: 1;
+transform: translateY(-50%);
+color: #fff;
+pointer-events: auto;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+.top-card { width: 90%; }
+.goal-card { width: 45%; }
+}
+
+@media (max-width: 600px) {
+.goal-card, .top-card { width: 100%; }
+}
+
+/* ========================================
+   PROGRAMS SECTION
+   ======================================== */
 .programs {
   background: #f3f6fb;
   padding: 100px 40px;
@@ -350,7 +514,7 @@ body {
   margin: 0 auto;
 }
 
-/* === Program Cards Grid === */
+/* Programs Grid */
 .programs-wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -359,7 +523,7 @@ body {
   margin: 0 auto;
 }
 
-/* === Program Card === */
+/* Program Card */
 .program-card {
   background: #fff;
   border-radius: 16px;
@@ -377,15 +541,15 @@ body {
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
 }
 
-/* === Image Slot === */
+/* Program Image */
 .program-img {
   width: 100%;
-  height: 160px; /* Fixed height to prevent stretching */
-  object-fit: cover; /* Ensures image scales neatly */
-  border-bottom: 4px solid #0a3d91; /* Stylish divider line */
+  height: 160px;
+  object-fit: cover;
+  border-bottom: 4px solid #0a3d91;
 }
 
-/* === Program Info === */
+/* Program Info */
 .program-info {
   padding: 20px 24px;
 }
@@ -402,23 +566,9 @@ body {
   font-size: 0.95rem;
 }
 
-/* === Responsive === */
-@media (max-width: 768px) {
-  .programs {
-    padding: 70px 20px;
-  }
-
-  .programs-header h2 {
-    font-size: 2rem;
-  }
-
-  .program-img {
-    height: 140px;
-  }
-}
-
-
-/* OFFICIALS */
+/* ========================================
+   ORGANIZATIONAL CHART (OFFICIALS)
+   ======================================== */
 .orgchart {
   font-family: "Inter", "Segoe UI", Arial, sans-serif;
   background: #f4f6fb;
@@ -431,7 +581,6 @@ body {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
-/* Title */
 .orgchart-title {
   font-size: 30px;
   font-weight: 700;
@@ -439,7 +588,7 @@ body {
   margin-bottom: 40px;
 }
 
-/* Node styles */
+/* Organization Node Styles */
 .org-node {
   background: #fff;
   border-radius: 12px;
@@ -477,6 +626,7 @@ body {
   color: #555;
 }
 
+/* Top Node (Dean) */
 .org-node.top {
   background: linear-gradient(135deg, #e7f1ff, #9ab8e0);
   color: white;
@@ -486,7 +636,7 @@ body {
   border-color: #fff;
 }
 
-/* Level layout */
+/* Organization Level Layout */
 .org-level {
   display: flex;
   justify-content: center;
@@ -500,7 +650,7 @@ body {
   margin-top: 50px;
 }
 
-/* Lines */
+/* Connecting Lines */
 .line.vertical {
   width: 3px;
   height: 30px;
@@ -517,7 +667,7 @@ body {
   background: #aac7ff;
 }
 
-/* Vertical connectors for each node */
+/* Vertical Connectors for Each Node */
 .level-3 .org-node::before {
   content: "";
   position: absolute;
@@ -529,8 +679,308 @@ body {
   background: #aac7ff;
 }
 
-/* Responsive adjustments */
+/* ========================================
+   DEVELOPERS SECTION
+   ======================================== */
+.developers-section {
+  background: #f9fbff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 25px;
+  font-weight: 800;
+  color: #0b367f;
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 50px;
+}
+
+.developers-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  justify-content: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Developer Card */
+.dev-card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  text-align: center;
+  padding-bottom: 25px;
+}
+
+.dev-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(11, 110, 246, 0.2);
+}
+
+.dev-image {
+  width: 100%;
+  height: 240px;
+  background: #e6efff;
+  overflow: hidden;
+}
+
+.dev-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.dev-card:hover img {
+  transform: scale(1.05);
+}
+
+.dev-card h3 {
+  font-size: 20px;
+  color: #0b367f;
+  margin: 18px 0 10px;
+  font-weight: 700;
+}
+
+.dev-card p {
+  font-size: 15px;
+  color: #555;
+  padding: 0 18px;
+  line-height: 1.5;
+}
+
+/* ========================================
+   COLLEGES SECTION
+   ======================================== */
+.colleges-section {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #f8f9fa;
+}
+
+.colleges-section h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.colleges-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  justify-items: center;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* College Card */
+.college-card {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.college-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+}
+
+.college-card:hover img {
+  transform: scale(1.05);
+  filter: brightness(70%);
+}
+
+/* College Card Overlay */
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  text-align: center;
+  padding: 10px;
+}
+
+.college-card:hover .overlay {
+  opacity: 1;
+}
+
+/* ========================================
+   CONTACT SECTION
+   ======================================== */
+.contact-head {
+  font-size: 30px;
+  font-weight: 800;
+  color: #0b367f;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 20px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.contact-card {
+  padding: 16px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #fff, #fbfdff);
+  box-shadow: 0 8px 30px rgba(2, 6, 23, 0.05);
+}
+
+/* Form Fields */
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.form-field input,
+.form-field textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #e6eefc;
+  background: transparent;
+  outline: none;
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+.footer {
+  background: #071433;
+  color: white;
+  padding: 32px 0;
+  margin-top: 40px;
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+/* Tablet and Below (980px) */
+@media (max-width: 980px) {
+  .hero .container {
+    grid-template-columns: 1fr;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .programs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: inline-block;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+
+  .nav-spacer {
+    height: calc(var(--nav-height) + 8px);
+  }
+}
+
+/* Colleges Section Responsive */
+@media (max-width: 1000px) {
+  .colleges-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* About Section Responsive */
+@media (max-width: 900px) {
+  .top-card {
+    width: 90%;
+  }
+
+  .goal-card {
+    width: 45%;
+  }
+}
+
+/* Hero Section Responsive */
 @media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-stats {
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+  }
+
+  .programs {
+    padding: 70px 20px;
+  }
+
+  .programs-header h2 {
+    font-size: 2rem;
+  }
+
+  .program-img {
+    height: 140px;
+  }
+
   .org-node {
     width: 180px;
     padding: 15px;
@@ -547,249 +997,29 @@ body {
   }
 }
 
-/* Contact grid */
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 420px;
-  gap: 20px;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 20px;
-}
-.contact-card {
-  padding: 16px;
-  border-radius: 12px;
-  background: linear-gradient(180deg, #fff, #fbfdff);
-  box-shadow: 0 8px 30px rgba(2, 6, 23, 0.05);
-}
-.form-field {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  margin-bottom: 10px;
-}
-.form-field input,
-.form-field textarea {
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #e6eefc;
-  background: transparent;
-  outline: none;
-}
-
-/* Footer */
-.footer {
-  background: #071433;
-  color: white;
-  padding: 32px 0;
-  margin-top: 40px;
-}
-
-/* Animations */
-.fade-in {
-  opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-.fade-in.visible {
-  opacity: 1;
-  transform: none;
-}
-
-/* Responsive */
-@media (max-width: 980px) {
-  .hero .container {
-    grid-template-columns: 1fr;
-  }
-  .about-grid {
-    grid-template-columns: 1fr;
-  }
-  .programs-grid {
-    grid-template-columns: 1fr;
-  }
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-  .nav-links {
-    display: none;
-  }
-  .nav-toggle {
-    display: inline-block;
-  }
-  .mobile-menu {
-    display: none;
-  }
-  .nav-spacer {
-    height: calc(var(--nav-height) + 8px);
-  }
-}
+/* Mobile (640px and Below) */
 @media (max-width: 640px) {
   .brand-text .uni-name {
     font-size: 13px;
   }
+
   .brand-text .college-name {
     font-size: 11px;
   }
+
   .logo {
     width: 40px;
     height: 40px;
   }
 }
 
-.slide-button {
-  position: relative;
-  display: inline-block;
-  padding: 12px 28px;
-  background-color: #216afc;
-  color: white;
-  font-weight: 600;
-  border-radius: 16px;
-  text-decoration: none;
-  overflow: hidden;
-  transition: transform 0.2s ease;
-  z-index: 1;
-}
-
-.slide-button::before {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 100%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(135deg, #0b6ef6, #0548a8, #001f5c); /* fade effect */
-  transform: rotate(-45deg);
-  transition: all 0.6s ease;
-  opacity: 0; /* start invisible */
-  z-index: -1; /* behind text */
-}
-
-.slide-button:hover::before {
-  top: -50%;
-  left: -50%;
-  opacity: 1; /* fades in */
-}
-
-.slide-button:hover {
-  transform: translateY(-3px);
-}
-
-
-/* === ABOUT CIT CENTERED STYLE === */
-.about-cit {
-  background: #f8fbff;
-  padding: 70px 20px 100px;
-  font-family: "Poppins", sans-serif;
-  color: #0b2b4f;
-  text-align: center;
-}
-
-.about-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.about-inner h2 {
-  font-size: 38px;
-  font-weight: 800;
-  color: #3b64ac;
-  margin-bottom: 10px;
-}
-
-.about-desc {
-  font-size: 16px;
-  color: #6b7280;
-  margin-bottom: 50px;
-}
-
-/* Rows */
-.row {
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  gap: 30px;
-  flex-wrap: wrap;
-  margin-bottom: 30px;
-}
-
-/* Card Base */
-.card {
-  background: #fff;
-  border-radius: 14px;
-  box-shadow: 0 18px 40px rgba(49, 131, 247, 0.04), 0 4px 12px rgba(11, 78, 170, 0.03);
-  overflow: hidden;
-  cursor: pointer;
-  position: relative;
-  transition: all 0.35s ease;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-/* Sizes */
-.top-card {
-  width: 500px;
-  height: 180px;
-}
-
-.goal-card {
-  width: 250px;
-  height: 250px;
-}
-
-/* Texts */
-.card .front,
-.card .back {
-  position: absolute;
-  left: 20px;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  transition: opacity 0.4s ease, transform 0.4s ease;
-}
-
-.card .front {
-  font-weight: 800;
-  font-size: 28px;
-  color: #0b367f;
-  opacity: 1;
-}
-
-
-.card .back {
-  font-size: 15px;
-  color: #0b2b3b;
-  line-height: 1.6;
-  opacity: 0;
-  transform: translateY(20px);
-  pointer-events: none;
-}
-
-/* Hover Effects */
-.card:hover {
-  background: linear-gradient(135deg, #6c96d1 0%, #175ed9 100%);
-  transform: translateY(-8px);
-}
-
-.card:hover .front {
-  opacity: 0;
-  transform: translateY(-15px);
-}
-
-.card:hover .back {
-  opacity: 1;
-  transform: translateY(-50%);
-  color: #fff;
-  pointer-events: auto;
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-  .top-card { width: 90%; }
-  .goal-card { width: 45%; }
-}
-
 @media (max-width: 600px) {
-  .goal-card, .top-card { width: 100%; }
+  .goal-card,
+  .top-card {
+    width: 100%;
+  }
+
+  .colleges-container {
+    grid-template-columns: 1fr;
+  }
 }
