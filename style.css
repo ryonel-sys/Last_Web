@@ -1026,3 +1026,58 @@ pointer-events: auto;
     grid-template-columns: 1fr;
   }
 }
+
+/* CONTACT SECTION */
+.contact-grid {
+  margin-top: 18px;
+}
+
+.contact-card h3 {
+  margin-top: 0;
+}
+
+.contact-card p:last-of-type {
+  margin-top: 10px;
+  color: var(--muted);
+}
+
+/* Buttons inside form */
+#contactForm div[style] {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+/* Reset button */
+#contactForm .btn-reset {
+  background: #f0f6ff;
+  border: 1px solid #e6eefc;
+}
+
+/* Form note text */
+#formNote {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+/* FOOTER SECTION */
+.footer .frow.container div:first-child p {
+  color: #a5b7d9;
+}
+
+.footer .quick-links a {
+  color: #a5b7d9;
+}
+
+.footer .contact-info p {
+  color: #a5b7d9;
+  margin-top: 8px;
+}
+
+/* Footer copyright */
+.footer-bottom {
+  text-align: center;
+  color: #8aa7db;
+  margin-top: 18px;
+}
