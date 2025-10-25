@@ -880,9 +880,12 @@ pointer-events: auto;
    ======================================== */
 .footer {
   background: #071433;
+  background: linear-gradient(rgba(30, 90, 230, 0.8), rgba(1, 32, 104, 0.8)),
+  url("herobg.png") center/cover no-repeat;
   color: white;
   padding: 32px 0;
   margin-top: 40px;
+
 }
 
 /* ========================================
