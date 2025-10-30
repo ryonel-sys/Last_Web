@@ -10,22 +10,20 @@
   </head>
   <body>
     <!-- =========================
-      NAVBAR (sticky)
+      NAVBAR
       ========================= -->
     <header class="site-header">
-      <div class="nav-inner">
+      <div class="nav-inner"> 
         
         <div
           class="brand"
           id="brand"
-          role="button"
-          onclick="scrollToSection('home')"
-          aria-label="Go to home"
+
+          
         >
           <img
             id="siteLogo"
-            src="/image src/logo/CIT.png"
-            alt="School logo (replace logo.png)"
+            src="CIT.png"
             class="logo"
           />
           <div class="brand-text">
@@ -37,19 +35,19 @@
         <!-- Desktop links -->
         <nav class="nav" aria-label="Main navigation">
           <ul class="nav-links" id="navLinks">
-            <li><a href="#home" data-target="home">Home</a></li>
-            <li><a href="#about" data-target="about">About</a></li>
-            <li><a href="#programs" data-target="programs">Programs</a></li>
-            <li><a href="#officials" data-target="officials">Officials</a></li>
-            <li><a href="#Mem" data-target="mem">Members</a></li>
-            <li><a href="#coco" data-target="coco">Colleges</a></li>
+            <li><a data-target="home">Home</a></li>
+            <li><a data-target="about">About</a></li>
+            <li><a data-target="programs">Programs</a></li>
+            <li><a data-target="officials">Officials</a></li>
+            <li><a data-target="mem">Members</a></li>
+            <li><a data-target="coco">Colleges</a></li>
             
           </ul>
         </nav>
 
         <!-- CTA + mobile menu button -->
         <div class="nav-actions">
-          <a class="nav-cta" href="#contact" data-target="contact"
+          <a class="nav-cta" data-target="contact"
             >Contact Us</a
           >
           <button
